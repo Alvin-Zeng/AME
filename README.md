@@ -29,7 +29,7 @@ git clone --recursive https://github.com/Alvin-Zeng/AME
 - [UCF101_contrast](https://drive.google.com/file/d/13QHfzMlu8Vjoo6NtmJGiI_whejyKTCKK/view?usp=drive_link)
 
 ### <span id = "Training AME"> **Training and Testing AME** </span>
-You can use this command to training and testing AME
+You can use this command to training and testing AME </b>
 You can use a for loop iterates to control which noise you want to train and test AME.If you want to change other noise,you can replace contrast with the name of another noise.
 ```shell
 for CORRUPT in contrast 
