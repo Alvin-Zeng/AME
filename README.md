@@ -1,14 +1,12 @@
-# AME
+## AME
+
 ![Update](https://img.shields.io/github/last-commit/Alvin-Zeng/AME?color=green&label=last-updated&logo=update&style=flat-squre) [![Contributor](https://img.shields.io/static/v1?label=by&message=Lujule&color=blue&style=flat-squre)](https://github.com/Lujule)
- 
+# Exploring Motion Cues for Video Test-Time Adaptation
 
-This technique reduces the adaptation difficulty often caused by poor performance on out-of-distribution test data before adaptation.
-
-A curated list of temporal action localization/detection and related area (e.g. temporal action proposal) resources.
+This repo holds the codes and models for the AME framework presented on ACM MM2023  
+<b>Exploring Motion Cues for Video Test-Time Adaptation </b>Runhao Zeng, Qi Deng, Huixuan Xu, Shuaicheng Niu, Jian Chen  
 
 ---
-
-Contributors: Runhao Zeng, Qi Deng, Huixuan Xu, Shuaicheng Niu, Jian Chen
 
 ### <span id = "Use guide"> **Usage Guide** </span>
 ## <span id = "Prerequisites"> **Prerequisites** </span>
