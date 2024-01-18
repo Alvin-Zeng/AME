@@ -64,7 +64,7 @@ parser.add_argument('--dist_type', type=str, default="cosine", choices=["cosine"
 parser.add_argument('--dataset', type=str, default='ucf101')
 parser.add_argument('--dataset_path', type=str, default='/mnt/cephfs/dataset/UCF101/UCF-101')
 parser.add_argument('--classes_path', type=str, default=None)
-parser.add_argument('--annotation', type=str, default='/mnt/cephfs/dataset/UCF101/ucfTrainTestlist')
+parser.add_argument('--annotation', type=str, default='./ucfTrainTestlist')
 parser.add_argument('--dataset_workers', type=int, default=8)
 parser.add_argument('--dataloader_workers', type=int, default=8)
 parser.add_argument('--test_batchsize', type=int, default=16)
