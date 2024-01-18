@@ -40,7 +40,7 @@ do
     --time_log \
     --dataset=ucf101-${CORRUPT} \
     --checkpoint=$PATH_OF_TRAINING_CHECKPOINT \
-    --dataset= $PATH_OF_TRAINING_DATASET \
+    --dataset_path= $PATH_OF_TRAINING_DATASET \
     --save_ckpt= $PATH_OF_SAVING_TRAINING_CHECKPOINT \
     --mix \
     --lr=5e-6 \
