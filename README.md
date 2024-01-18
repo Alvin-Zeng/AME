@@ -4,7 +4,7 @@
 # Exploring Motion Cues for Video Test-Time Adaptation
 
 This repo holds the codes and models for the AME framework presented on ACM MM2023  
-<b>Exploring Motion Cues for Video Test-Time Adaptation </b>Runhao Zeng, Qi Deng, Huixuan Xu, Shuaicheng Niu, Jian Chen  
+<b>Exploring Motion Cues for Video Test-Time Adaptation </b>Runhao Zeng, Qi Deng, Huixuan Xu, Shuaicheng Niu, Jian Chen, ACM MM ’23, October 29-November 3, 2023, Ottawa, ON, Canada
 
 ---
 
