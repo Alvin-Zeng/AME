@@ -30,14 +30,13 @@ git clone --recursive https://github.com/Alvin-Zeng/AME
 
 ### <span id = "Training AME"> **Training and Testing AME** </span>
 You can use this command to training and testing AME
+You can use a for loop iterates to control which noise you want to train and test AME.If you want to change other noise,you can replace contrast with the name of another noise.
 ```shell
-for CORRUPT in contrast
+for CORRUPT in contrast 
 do
-  for SEED in 507
-  do
     CUDA_VISIBLE_DEVICES=7 python main.py \
-    --seed=${SEED} \
-    --log_dir=log_seed/tanet_ucf101/${CORRUPT}/5e-6/${SEED} \
+    --seed=507 \
+    --log_dir=log_seed/tanet_ucf101/${CORRUPT}/5e-6 \
     --time_log \
     --dataset=ucf101-${CORRUPT} \
     --checkpoint=$PATH_OF_TRAINING_CHECKPOINT \
@@ -46,9 +45,9 @@ do
     --mix \
     --lr=5e-6 \
     --gpus 0
-  done
 done
 ```
+
 You can also use other commands in the script folder to train different dataset
 
 
@@ -63,5 +62,23 @@ You can also use other commands in the script folder to train different dataset
 | ATCoN*          | 60.19 | 50.60 | 32.60 | 84.80 | 78.80 | 62.50 | 69.40 | 84.70 | 71.10 | 86.30 | 78.30 | 69.03 |
 | <b>Ours</b>     | 72.06 | 64.45 | 53.50 | 86.84 | 77.80 | 67.09 | 63.57 | 88.94 | 71.76 | 90.50 | 80.89 | 74.31 |
 
-
+## <span id ="Citation"> **Citation**</span>
+Please cite the following paper if you feel AME useful to your research
+```bibtex
+@inproceedings{ACMMM-AME,
+  author    = {Runhao Zeng and
+               Qi Deng and
+               Huixuan Xu and
+               Shuaicheng Niu and
+               Jian Chen},
+  title     = {Exploring Motion Cues for Video Test-Time Adaptation},
+  booktitle   = {ACM MM2023},
+  year      = {2023},
+}
+```
+## <span id ="Contact"> **Contact**</span>
+For any question, please file an issue or contact
+```email
+Runhao Zeng: runhaozeng.cs@gmail.com
+```
 
