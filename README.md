@@ -10,9 +10,47 @@ A curated list of temporal action localization/detection and related area (e.g. 
 
 Contributors: Runhao Zeng, Qi Deng, Huixuan Xu, Shuaicheng Niu, Jian Chen
 
+### <span id = "Use guide"> **Usage Guide** </span>
+## <span id = "Prerequisites"> **Prerequisites** </span>
+The training and testing in AME is reimplemented in PyTorch for the ease of use.
+- [PyTorch](https://github.com/pytorch/pytorch)
+Other minor Python modules can be installed by running
+```shell
+pip install -r requirements.txt
+```
+### <span id = "Code and Data Preparation"> **Code and Data Preparation** </span>
+## <span id = "Get the code"> **Get the code** </span>
+```shell
+git clone --recursive https://github.com/Alvin-Zeng/AME
+```
+
 ## <span id = "tal"> **Dataset** </span>
 - [UCF101_noise](https://files.icg.tugraz.at/d/3551df694e3d4d6b89da/?p=%2Fucf_corrupted_videos&mode=list)
 - [UCF101_contrast](https://drive.google.com/file/d/13QHfzMlu8Vjoo6NtmJGiI_whejyKTCKK/view?usp=drive_link)
+
+### <span id = "Training AME"> **Training and Testing AME** </span>
+You can use this command to training and testing AME
+```shell
+for CORRUPT in contrast
+do
+  for SEED in 507
+  do
+    CUDA_VISIBLE_DEVICES=7 python main.py \
+    --seed=${SEED} \
+    --log_dir=log_seed/tanet_ucf101/${CORRUPT}/5e-6/${SEED} \
+    --time_log \
+    --dataset=ucf101-${CORRUPT} \
+    --checkpoint=$PATH_OF_TRAINING_CHECKPOINT \
+    --dataset= $PATH_OF_TRAINING_DATASET \
+    --save_ckpt= $PATH_OF_SAVING_TRAINING_CHECKPOINT \
+    --mix \
+    --lr=5e-6 \
+    --gpus 0
+  done
+done
+```
+You can also use other commands in the script folder to train different dataset
+
 
 ## <span id = "tanet-tab"> **Comparisons of test-time adaptation performance on UCF101 dataset. * video domain adaptation method.** </span>
 |                     Method                      |  gauss  |   pepper   |   salt   |   shot   |   zoom   |   impulse   |   motion     |   jpeg      |   contrast  |     rain    |     h265.abr     |     avg     |
@@ -24,4 +62,6 @@ Contributors: Runhao Zeng, Qi Deng, Huixuan Xu, Shuaicheng Niu, Jian Chen
 | SAR             | 48.48 | 43.00 | 22.60 | 85.30 | 68.60 | 35.40 | 40.43 | 86.41 | 64.93 | 81.55 | 77.39 | 59.46 |
 | ATCoN*          | 60.19 | 50.60 | 32.60 | 84.80 | 78.80 | 62.50 | 69.40 | 84.70 | 71.10 | 86.30 | 78.30 | 69.03 |
 | <b>Ours</b>     | 72.06 | 64.45 | 53.50 | 86.84 | 77.80 | 67.09 | 63.57 | 88.94 | 71.76 | 90.50 | 80.89 | 74.31 |
+
+
 
